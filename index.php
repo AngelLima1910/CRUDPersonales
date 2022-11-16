@@ -39,7 +39,7 @@
                                 <td><?php echo $key['sexo'];?></td>
                                 <td></td>
                                 <td>
-                                    <a href="./procesos/eliminar.php">
+                                    <a href="./procesos/eliminar.php?id=<?php echo $key['id'] ?>">
                                     <button class="btn btn-danger">Eliminar</button></a>
                                 </td>
                             </tr>
