@@ -3,8 +3,8 @@
         public function Conectar() {
             return mysqli_connect(
                 'localhost',
-                'yamilet',
-                '1234',
+                'leslie',
+                '12345678',
                 'personales',
                 '3306'
             );

@@ -3,7 +3,10 @@
     include "../clases/Crud.php";
     $id = $_GET['id'];
     $crud = new Crud();
-    $data = $crud->mostrarDatos();
+    $conexion = $crud->Conectar();
+    $sql = "SELECT * FROM t_personas WHERE id = '$id'";
+    $result = mysqli_query($conexion, $sql);
+    $ver = mysqli_fetch_row($result);
 ?>
 
 <!doctype html>
@@ -28,18 +31,16 @@
                         <th>Sexo</th>
                     </thead>
                     <tbody>
-                        <?php foreach ($data as $key):?>
-                            <tr>
-                                <td><?php echo $key['nombre'];?></td>
-                                <td><?php echo $key['apellidoPaterno'];?></td>
-                                <td><?php echo $key['apellidoMaterno'];?></td>
-                                <td><?php echo $crud->calcularEdad($key['fechaNac']);?></td>
-                                <td><?php echo $key['sexo'];?></td>
-                            </tr>
-                        <?php endforeach;?>
+                        <tr>
+                            <td><?php echo $ver[1]?></td>
+                            <td><?php echo $ver[2];?></td>
+                            <td><?php echo $ver[3];?></td>
+                            <td><?php echo $crud->calcularEdad($ver[4]);?></td>
+                            <td><?php echo $ver[5];?></td>
+                        </tr>
                     </tbody>
                 </table>
-                <a href="../procesos/eliminar.php?id=<?php echo $key['id']?>" class="btn btn-danger">Eliminar</a>
+                <a href="../procesos/eliminar.php?id=<?php echo $ver[0]?>" class="btn btn-danger">Eliminar</a>
                 <a href="../index.php" class="btn btn-secondary">Regresar</a>
             </div>
         </div>

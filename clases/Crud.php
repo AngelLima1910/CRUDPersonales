@@ -29,5 +29,11 @@
             $sql = "DELETE FROM t_personas WHERE id ='$id'";
             return mysqli_query($conexion, $sql);  
         }
+        public function actualizarDatos($data) {
+            $c = new Conexion();
+            $conexion = $c->Conectar();
+            echo $sql = "UPDATE t_personas set nombre = '$data[0]', apellidoPaterno = '$data[1]', apellidoMaterno = '$data[2]', fechaNac = '$data[3]', sexo = '$data[4]' WHERE id = '$data[5]'";
+            return $result = mysqli_query($conexion, $sql);
+        }
     }
 ?>

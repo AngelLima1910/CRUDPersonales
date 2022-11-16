@@ -37,7 +37,9 @@
                                 <td><?php echo $key['apellidoMaterno'];?></td>
                                 <td><?php echo $crud->calcularEdad($key['fechaNac']);?></td>
                                 <td><?php echo $key['sexo'];?></td>
-                                <td></td>
+                                <td>
+                                    <a href="./views/actualizarPersona.php?id=<?php echo $key['id'] ?>" class="btn btn-outline-warning"> Editar</a>
+                                </td>
                                 <td>
                                     <a href="./views/eliminarPersona.php?id=<?php echo $key['id'] ?>">
                                     <button class="btn btn-danger">Eliminar</button></a>
