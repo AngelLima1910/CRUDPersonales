@@ -32,7 +32,11 @@
                     </thead>
                     <tbody>
                         <tr>
+<<<<<<< HEAD
                             <td><?php echo $ver[1]?></td>
+=======
+                            <td><?php echo $ver[1];?></td>
+>>>>>>> 965bf0ed63dd3b8ec0a5f534ca3d09a472f04832
                             <td><?php echo $ver[2];?></td>
                             <td><?php echo $ver[3];?></td>
                             <td><?php echo $crud->calcularEdad($ver[4]);?></td>
