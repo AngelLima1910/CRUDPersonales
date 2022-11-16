@@ -10,5 +10,24 @@
                 return $th->getMessage();
             }
         }
+        public function insertarDatos($data){
+            $c = new Conexion();
+            $conexion = $c->Conectar();
+            echo $sql = "INSERT INTO t_personas (nombre, apellidoPaterno,apellidoMaterno,fechaNac,sexo) VALUES ('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]')";
+            return mysqli_query($conexion, $sql);
+        }
+        public function calcularEdad($fechaNac){
+            $convierteaEdad = new DateTime($fechaNac);
+            $fechaActual = new DateTime();
+            $fechaEdad = $fechaActual->diff($convierteaEdad);
+            $edad = $fechaEdad->y;
+            return $edad;
+        }
+        public function eliminar($id){
+            $c = new Conexion();
+            $conexion = $c->Conectar();
+            $sql = "DELETE FROM t_personas WHERE id ='$id'";
+            return mysqli_query($conexion, $sql);  
+        }
     }
 ?>

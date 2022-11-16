@@ -22,8 +22,8 @@
                     <input type="date" name="fechaNac" class="form-control" required>
                     <label for="sexo" class="form-label">Sexo</label>
                     <select name="sexo" id="" class="form-control">
-                        <option value="">Masculino</option>
-                        <option value="">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
                     </select>
                     <button class="btn btn-outline-primary mt-3">Agregar</button>
                     <a class="btn btn-outline-secondary mt-3" href="../index.php">Regresar</a>
