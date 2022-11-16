@@ -1,3 +1,11 @@
+<?php 
+    include "../clases/Conexion.php";
+    include "../clases/Crud.php";
+    $id = $_GET['id'];
+    $crud = new Crud();
+    $data = $crud->mostrarDatos();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,8 +38,9 @@
                             </tr>
                         <?php endforeach;?>
                     </tbody>
-
                 </table>
+                <a href="../procesos/eliminar.php?id=<?php echo $key['id']?>" class="btn btn-danger">Eliminar</a>
+                <a href="../index.php" class="btn btn-secondary">Regresar</a>
             </div>
         </div>
     </div>
